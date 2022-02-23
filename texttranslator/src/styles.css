@@ -1,0 +1,27 @@
+body {
+  background-color: grey;
+}
+
+body .innerImg {
+  width: 250px;
+  height: 250px;
+  background-size: cover !important;
+  border-radius: 150px;
+}
+
+body .innerContainer {
+  color: #0b19dd;
+  text-align: center;
+  background-color: #3bf8bf;
+  padding: 6rem;
+  border-radius: 25px;
+  -webkit-box-shadow: 10px 5px 100px;
+          box-shadow: 10px 5px 100px;
+}
+
+body .output {
+  background-color: white;
+  padding: 1rem 1rem;
+  text-align: left;
+}
+/*# sourceMappingURL=styles.css.map */
