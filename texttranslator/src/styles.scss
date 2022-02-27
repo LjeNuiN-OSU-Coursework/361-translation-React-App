@@ -1,158 +1,324 @@
-// $background-color: rgb(18, 53, 17);
-// $background-color-container: rgb(16, 211, 152);
+// $app-blue:rgb(11, 25, 221);
+// $app-green:rgb(59, 248, 191);
 
 
 // body {
-//     background-color: $background-color;
-// }
-// .outerContainer {
-//     color:rgb(0, 0, 0);
-//     text-align: center;
-//     background-color: rgb(16, 211, 152);
-//     border-radius: 25px;
-//     box-shadow:10px 5px 1000px;
-//     padding: 6rem;
-//     margin-top: 100px;
-//     align-self: flex
+//     background-color: rgb(90, 85, 85);
     
-// };
+//     .outerContainer{
+//         text-align: center;
+//         margin-left: auto;
+//         margin-right: auto;
+//         margin-top: auto;
+//         margin-bottom: auto;
+//         width: 50%;
 
-// .innerContainer {
-//     color:rgb(11, 25, 221);
-//     text-align: center;
-//     background-color: rgb(59, 248, 191);
-//     padding: 6rem;
-//     border-radius: 25px;
-//     box-shadow:10px 5px 100px;
-
-//     img{
-//         border-radius: 50%;
+//     }
+//     .innerImg {
 //         width: 250px;
 //         height: 250px;
-    
-   
-//     }
-//     img:hover{
-//         transform: scaleX(1.02)
+//         background-size: cover !important;
+//         border-radius: 150px;
+        
+//         margin-left: auto;
+//         margin-right: auto;
+//         margin-bottom: 50px;
+
+        
 //     }
 
-  
-// };
-    
-// .dropSelect {
-//         text-shadow: seashell ;
-//         color: rgb(255, 255, 255);
+//     .innerContainer {
+//       color:$app-blue;
+//           text-align: center;
+//           background-color: $app-green;
+//           padding: 6rem;
+//           border-radius: 25px;
+//           box-shadow:10px 5px 100px;
 
-//         select{
-//             background-color: #5abafa;
+//           select{
+//             background-color:$app-blue;
 //             color:rgb(255, 255, 255);
 //             padding: 2px;
 //             border-radius: 25px;
 //             margin-bottom: 2px;
 //         }
 //         textarea{
-//             background-color:#5abafa;
-//             color:white; 
+//             background-color:$app-blue;
+//             color:rgb(252, 16, 16); 
+//             font-weight: bold;
 //             border-radius: 5px; 
 //         }
+
+//         button{
+//             color: white;
+//             background-color: $app-blue;
+//             border-radius: 25px;
+//             padding: 1rem 1rem
+//         }
+//         button:hover{
+//             background-color: black;
+//             color: $app-green;
         
-// };
+//         }
+        
+//     };
+
+//     .textField{
+//         margin-left: auto;
+//         margin-right: auto;
+//     .output {
+//         background-color: $app-blue;
+//         color:white;
+//         text-align: left;
+//         border-radius: 5px;
+        
+//     }
+//     .input{
+        
+//         textarea{
+//             background-color: rgb(11, 25, 221);
+//             color: white;
+//             border-radius: 5px;
+           
+//         }
+        
+//     }
+// }
+
+// }
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 
-
-
-
-
-
-$app-blue:rgb(11, 25, 221);
-$app-green:rgb(59, 248, 191);
-
-
-
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
 
 body {
-    background-color: rgb(90, 85, 85);
-    
-    .outerContainer{
+    background-color: rgb(15, 15, 15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: white;
+
+    .outerContainer {
+        background-color: rgb(41, 41, 41);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
         text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: auto;
-        margin-bottom: auto;
-        width: 50%;
+        padding: 1rem 2rem;
+        border-radius: 10px;
+        outline: 1px solid rgb(61, 61, 61);
+        width: fit-content;
+        animation: glow 5s linear infinite;
 
-    }
-    .innerImg {
-        width: 250px;
-        height: 250px;
-        background-size: cover !important;
-        border-radius: 150px;
-        
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 50px;
+        .innerImg {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            width: 100%;
+            height: 250px;
+            background-size: cover !important;
+            background-position: center !important;
+                    
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 50px;
+            transform-origin: top;
+            background-color: rgb(24, 24, 24) !important;
+            outline: 1px solid rgb(61, 61, 61);
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.192);
 
-        
-    }
 
-    .innerContainer {
-      color:$app-blue;
-          text-align: center;
-          background-color: $app-green;
-          padding: 6rem;
-          border-radius: 25px;
-          box-shadow:10px 5px 100px;
-
-          select{
-            background-color:$app-blue;
-            color:rgb(255, 255, 255);
-            padding: 2px;
-            border-radius: 25px;
-            margin-bottom: 2px;
-        }
-        textarea{
-            background-color:$app-blue;
-            color:rgb(252, 16, 16); 
-            font-weight: bold;
-            border-radius: 5px; 
+            animation: fadeIn .5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+            filter: grayscale(50%);
         }
 
-        button{
+        h1 {
+            margin-bottom: 10px;
+            opacity: 0;
+            animation: fadeUp 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+            animation-delay: .2s;
+        }
+
+        textarea {
             color: white;
-            background-color: $app-blue;
-            border-radius: 25px;
-            padding: 1rem 1rem
-        }
-        button:hover{
-            background-color: black;
-            color: $app-green;
-        
-        }
-        
-    };
-
-    .textField{
-        margin-left: auto;
-        margin-right: auto;
-    .output {
-        background-color: $app-blue;
-        color:white;
-        text-align: left;
-        border-radius: 5px;
-        
-    }
-    .input{
-        
-        textarea{
-            background-color: rgb(11, 25, 221);
-            color: white;
+            outline: 1px solid rgb(61, 61, 61);
             border-radius: 5px;
-           
+            background-color: rgb(24, 24, 24);
+            border: none;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.192);
+            padding: 1rem;
         }
-        
+
+        select {
+            margin-bottom: 1rem;
+            color:white;
+            background-color: rgb(24, 24, 24);
+            border-radius: 6px;
+            margin-right: 10px;
+        }
+
+        span {
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+
+        .output {
+            color: white;
+            outline: 1px solid rgb(61, 61, 61);
+            border-radius: 5px;
+            background-color: rgb(24, 24, 24);
+            border: none;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.192);
+            padding: 1rem;
+            width: calc(100% - 2rem);
+            // height: 10px;
+            text-align: left;
+            font-size: 11pt;
+            animation: fadeIn .5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+        }
+
+        button {
+            color: white;
+            font-weight: bold;
+            background-color: rgba(0, 0, 0, 0.192);
+            border: none;
+            padding: 1em 2em;
+            border-radius: 20px;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            transition: all .2s cubic-bezier(0.075, 0.82, 0.165, 1);
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.589), 0 -2px 10px rgba(255, 255, 255, 0.058);
+            svg {
+                display: none;
+            }
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.05);
+                background-color: rgb(59, 248, 191);
+                box-shadow: 0 3px 5px rgb(10, 39, 31), 0 -2px 10px rgba(0, 255, 106, 0.137);
+                color:black;
+                position: relative;
+                animation: partyBackground 1s linear infinite;
+                p {
+                    margin-right: 10px;
+                }
+                svg {
+                    display: block;
+                    position: absolute;
+                    right: 10px;
+                    top: 50%;
+                    transform: translateY(-50%);
+
+                    animation: fadeIn .5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+                }
+
+            }
+        }
     }
 }
 
+// animation
+@keyframes partyBackground {
+    0%{
+        background-color: rgb(255, 0, 0);
+    }
+    10% {
+        background-color: rgb(255, 166, 0);
+    }
+    20% {
+        background-color: rgb(166, 255, 0);
+    }
+    30% {
+        background-color: rgb(9, 255, 0);
+    }
+    40% {
+        background-color: rgb(0, 255, 213);
+    }
+    50% {
+        background-color: rgb(0, 102, 255);
+    }
+    60% {
+        background-color: rgb(3, 13, 160);
+    }
+    70% {
+        background-color: rgb(160, 3, 160);
+    }
+    80% {
+        background-color: rgb(255, 0, 140);
+    }
+    90% {
+        background-color: rgb(255, 0, 34);
+    }
+    100% {
+        background-color: rgb(255, 0, 0);
+    }
+}
+
+// animation
+@keyframes glow {
+    0%{
+        box-shadow: 0 0 5rem rgba(255, 0, 242, 0.322);
+    }
+    25% {
+        box-shadow: 0 0 15rem rgba(119, 0, 255, 0.322);
+    }
+    50% {
+        box-shadow: 0 0 10rem rgba(0, 68, 255, 0.322);
+    }
+    100% {
+        box-shadow: 0 0 5rem rgba(119, 0, 255, 0.322);
+    }
+}
+
+@keyframes fadeUp {
+    0%{
+        opacity: 0;
+        transform: translateY(25px)
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+// animation
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background: rgba(255, 255, 255, 0.26);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
 }
 
 

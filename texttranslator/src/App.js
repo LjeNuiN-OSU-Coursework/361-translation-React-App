@@ -2,6 +2,7 @@ import "./styles.scss";
 import { useEffect, useState } from "react";
 import Selector from "./components/Selector";
 import axios from "axios";
+import { FiArrowRightCircle } from "react-icons/fi";
 
 // import customButton from "./components/customButton";
 
@@ -15,37 +16,35 @@ function App() {
   const [translateFrom, setTranslateFrom] = useState("en");
   const [translateTo, setTranslateTo] = useState("en");
 
-  const [imgIndex, setImgIndex] = useState(0)
+  const [imgIndex, setImgIndex] = useState(0);
 
-// List holding images from teamates service
+  // List holding images from teamates service
   const [urls, setUrls] = useState([]);
-  
 
-// get resquest to teamates service
-function updateImage() {
+  // get resquest to teamates service
+  function updateImage() {
     // request to teamates service
-    
-    axios.get(`/api/v1/images/${input}`)  
-    .then(response => {
-      setUrls(response.data.urls);
-      // setImg(
-      //   urls[0]
-      // );
-      
-      // this.setState({urls: res.data});
-      
-    })
-      .catch(error => {
-        console.error('There was an error!', error);
-    });   
 
+    axios
+      .get(`/api/v1/images/${input}`)
+      .then((response) => {
+        setUrls(response.data.urls);
+        // setImg(
+        //   urls[0]
+        // );
+
+        // this.setState({urls: res.data});
+      })
+      .catch((error) => {
+        console.error("There was an error!", error);
+      });
 
     // if response is good
     // setImg(response.url)
     // Set the image to first url matching keyword
-  };
+  }
   const translate = async () => {
-    updateImage()
+    updateImage();
     const params = new URLSearchParams();
     params.append("q", input);
     params.append("source", translateFrom);
@@ -65,10 +64,8 @@ function updateImage() {
       .then((data) => {
         console.log(data);
         setOutput(data.translatedText);
-        
       });
   };
-
 
   // for rendering list of languages
   useEffect(() => {
@@ -82,44 +79,45 @@ function updateImage() {
       });
   }, []);
 
-function cycleImg () 
-{
-setImgIndex((imgIndex + 1) % urls.length)
-}; 
+  function cycleImg() {
+    setImgIndex((imgIndex + 1) % urls.length);
+  }
 
   return (
     <div className="outerContainer">
       <div className="innerContainer">
         <h1>Easy Translations</h1>
-
+        {urls.length !== 0 && (
+          <div
+            className="innerImg"
+            onClick={cycleImg}
+            key={urls[imgIndex]}
+            style={{ background: `url(${urls[imgIndex]})` }}
+          >
+            {urls.length === 0 ? "Image of translated text" : ""}
+          </div>
+        )}
         <div className="dropSelect">
-          <div className="innerImg" onClick={cycleImg} style={{ background: `url(${urls[imgIndex]})` }}>
-            {/* <img
-              src={img}
-              alt="Image will only be shown for single word translations"
-            /> */}
-          </div>
-          Translate from({translateFrom}):
+          <span>Translate from:</span>
           <Selector options={options} setValue={setTranslateFrom} />
-          to ({translateTo}):
+          <span>to:</span>
           <Selector options={options} setValue={setTranslateTo} />
-          <div className="textField">
-            <div className="input">
-              <textarea
-                cols="50"
-                row="4"
-                onChange={(e) => setInput(e.target.value)}
-              ></textarea>
-            </div>
-            <div className="output">
-              {/* <textarea cols="50" row="4" value={output}></textarea> */}
-              <p>{output}</p>
-            </div>
+        </div>
+        <div className="textField">
+          <div className="input">
+            <textarea
+              placeholder="Type what you wish to translate"
+              cols="50"
+              row="4"
+              onChange={(e) => setInput(e.target.value)}
+            ></textarea>
           </div>
-
-
-          <button onClick={translate}>Translate </button>
-          
+          <button onClick={translate}>
+            <p>Translate</p> <FiArrowRightCircle />
+          </button>
+          <div className="output" key={output}>
+            <p>{output}</p>
+          </div>
         </div>
       </div>
     </div>
