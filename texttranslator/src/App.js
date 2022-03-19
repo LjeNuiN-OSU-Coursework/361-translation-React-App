@@ -4,9 +4,7 @@ import Selector from "./components/Selector";
 import axios from "axios";
 import { FiArrowRightCircle } from "react-icons/fi";
 
-// import customButton from "./components/customButton";
 
-// axios.<method> will now provide autocomplete and parameter typings
 var URLSearchParams = require("url-search-params");
 
 function App() {
@@ -18,31 +16,26 @@ function App() {
 
   const [imgIndex, setImgIndex] = useState(0);
 
-  // List holding images from teamates service
+  // List that will hold images from teamates service
   const [urls, setUrls] = useState([]);
+
 
   // get resquest to teamates service
   function updateImage() {
-    // request to teamates service
-
     axios
       .get(`/api/v1/images/${input}`)
       .then((response) => {
-        setUrls(response.data.urls);
-        // setImg(
-        //   urls[0]
-        // );
-
-        // this.setState({urls: res.data});
+        setUrls(response.data.urls[2]);
+  
       })
       .catch((error) => {
         console.error("There was an error!", error);
       });
 
-    // if response is good
-    // setImg(response.url)
-    // Set the image to first url matching keyword
+   
   }
+
+  // Function that will 1) proccess translation, 2) render image if teamate service is up
   const translate = async () => {
     updateImage();
     const params = new URLSearchParams();
@@ -59,6 +52,7 @@ function App() {
         format: "text",
       }),
       headers: { "Content-Type": "application/json" },
+
     })
       .then((response) => response.json())
       .then((data) => {
@@ -79,10 +73,12 @@ function App() {
       });
   }, []);
 
+  //Cycle betweent the 10 images in a loop
   function cycleImg() {
     setImgIndex((imgIndex + 1) % urls.length);
-  }
+  };
 
+  
   return (
     <div className="outerContainer">
       <div className="innerContainer">
