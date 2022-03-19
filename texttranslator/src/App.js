@@ -25,7 +25,7 @@ function App() {
     axios
       .get(`/api/v1/images/${input}`)
       .then((response) => {
-        setUrls(response.data.urls[2]);
+        setUrls(response.data.urls);
   
       })
       .catch((error) => {
@@ -73,7 +73,7 @@ function App() {
       });
   }, []);
 
-  //Cycle betweent the 10 images in a loop
+  //Cycle between the 10 images in a loop
   function cycleImg() {
     setImgIndex((imgIndex + 1) % urls.length);
   };
